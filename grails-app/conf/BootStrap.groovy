@@ -3,7 +3,7 @@ import eaccount.Role;
 import eaccount.UserRole;
 
 class BootStrap {
-
+def springSecurityService
     def init = { servletContext ->
         println("initialising bootstrap")
 
