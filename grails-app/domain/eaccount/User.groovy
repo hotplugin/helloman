@@ -14,7 +14,8 @@ class User {
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
-
+        Student student;
+        static belongsTo=Student;
 	static constraints = {
 		firstName(blank:false)
         middleName(blank:true)
@@ -22,6 +23,9 @@ class User {
 
 		username blank: false, unique: true
 		password blank: false
+                student nullable:true
+                student blank:false;
+                student display:false;
 	}
 
 	static mapping = {

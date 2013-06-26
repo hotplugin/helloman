@@ -14,12 +14,19 @@
 
             <div class="span4">
               <h2>Navigate</h2>
-              <ul class="nav nav-list">
-                <li><g:link controller="user">    Users</g:link></li>
+              <sec:ifAllGranted roles="ROLE_ADMIN">
+                <ul class="nav nav-list">
+                  <li><g:link controller="user">    Users</g:link></li>
                   <li><g:link controller="student">    Students</g:link></li>
-               <li><g:link controller="studentClass">    Student Classes</g:link></li>
+                  <li><g:link controller="studentClass">    Student Classes</g:link></li>
+                  <li><g:link controller="assignment">    Assignments</g:link></li>
+                  <g:link controller="logout" action="index">Logout</g:link>
+                </ul>
+              </sec:ifAllGranted>
+              <sec:ifAllGranted roles="ROLE_STUDENT">
+                <li><g:link controller="assignment" action="myAssShow">Mero Assignment</g:link></li>
                 <g:link controller="logout" action="index">Logout</g:link>
-              </ul>
+              </sec:ifAllGranted>
             </div>
 <!--            <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
 						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
@@ -27,14 +34,12 @@
 
             <div class="span4">
               <h2>About Us</h2>
-              <p>A recently established food court located in one of the most popular shopping mall in 							   Kathmandu, Star Mall.</p>
-              <p>The food court is expected to have at least 8 Food stalls with the maximum catering capacity of 							100 customers at once.</p>
-              <p>Each Stall and the Cash Counter will have a RFID Card Reader, a dot-matrix Bill Printer and a POS application.</p>
+              <p>Test App</p>
             </div>
 
             <div class="span4">
               <h2>Location</h2>
-              <p>Starr Mall, Kathmandu</p>
+              <p>USA!!!! hoina NEPAL ho</p>
             </div>
 
           </div>

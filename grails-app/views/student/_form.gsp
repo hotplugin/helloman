@@ -18,3 +18,11 @@
 	<g:select id="studentClass" name="studentClass.id" from="${eaccount.StudentClass.list()}" optionKey="id" required="" value="${studentInstance?.studentClass?.id}" class="many-to-one"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'assignment', 'error')} required">
+	<label for="assignment">
+		<g:message code="student.assignment.label" default="Assignment" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="assignment" name="assignment.id" from="${eaccount.Assignment.list()}" optionKey="id" required="" value="${studentInstance?.assignment?.id}" class="many-to-one"/>
+</div>
+

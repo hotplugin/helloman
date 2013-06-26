@@ -9,7 +9,7 @@ def springSecurityService
 
 		User sandboxUser = new User(firstName:"faisal",
 			 middleName:"hero",
-			 lastName:"adil",
+			 lastName:"teacher",
 			 username:"faisal@gmail.com",
                          password:"123456").save()
 
@@ -30,6 +30,30 @@ def springSecurityService
 		}else{
 			println("user already exists")
 		}
+                User sandboxStudentUser = new User(firstName:"gita",
+			 middleName:"student",
+			 lastName:"thapa",
+			 username:"gita",
+                         password:"gita").save()
+
+
+
+		if(sandboxStudentUser){
+			println("sandboxStudentUser created")
+	         	def role = Role.findByAuthority("ROLE_STUDENT")
+			if(role==null){
+				role = new Role(authority: "ROLE_STUDENT")
+		                role.save(flush: true)
+				println("role created")
+			}
+
+     	                def userrole = new UserRole(user: sandboxUser,role: role)
+	                userrole.save(flush: true)
+
+		}else{
+			println("sandboxStudentUser already exists")
+		}
+                
     }
     def destroy = {
     }

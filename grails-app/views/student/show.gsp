@@ -41,6 +41,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${studentInstance?.assignment}">
+				<li class="fieldcontain">
+					<span id="assignment-label" class="property-label"><g:message code="student.assignment.label" default="Assignment" /></span>
+					
+						<span class="property-value" aria-labelledby="assignment-label"><g:link controller="assignment" action="show" id="${studentInstance?.assignment?.id}">${studentInstance?.assignment?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${studentInstance?.created}">
 				<li class="fieldcontain">
 					<span id="created-label" class="property-label"><g:message code="student.created.label" default="Created" /></span>

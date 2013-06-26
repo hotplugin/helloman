@@ -28,6 +28,8 @@
 					
 						<th><g:message code="student.studentClass.label" default="Student Class" /></th>
 					
+						<th><g:message code="student.assignment.label" default="Assignment" /></th>
+					
 						<g:sortableColumn property="created" title="${message(code: 'student.created.label', default: 'Created')}" />
 					
 						<g:sortableColumn property="active" title="${message(code: 'student.active.label', default: 'Active')}" />
@@ -41,6 +43,8 @@
 						<td><g:link action="show" id="${studentInstance.id}">${fieldValue(bean: studentInstance, field: "name")}</g:link></td>
 					
 						<td>${fieldValue(bean: studentInstance, field: "studentClass")}</td>
+					
+						<td>${fieldValue(bean: studentInstance, field: "assignment")}</td>
 					
 						<td><g:formatDate date="${studentInstance.created}" /></td>
 					
