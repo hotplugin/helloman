@@ -10,12 +10,10 @@
         <section id="main" class="span9">
 
 
-          <div class="row-fluid">
-
-            <div class="span4">
-              <h2>Navigate</h2>
+            <div class="nav" role="navigation">
               <sec:ifAllGranted roles="ROLE_ADMIN">
-                <ul class="nav nav-list">
+                <ul>
+                  <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
                   <li><g:link controller="user">    Users</g:link></li>
                   <li><g:link controller="student">    Students</g:link></li>
                   <li><g:link controller="studentClass">    Student Classes</g:link></li>
@@ -24,6 +22,7 @@
                 </ul>
               </sec:ifAllGranted>
               <sec:ifAllGranted roles="ROLE_STUDENT">
+                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
                 <li><g:link controller="assignment" action="myAssShow">Mero Assignment</g:link></li>
                 <g:link controller="logout" action="index">Logout</g:link>
               </sec:ifAllGranted>
@@ -33,16 +32,8 @@
 					</g:each>-->
 
             <div class="span4">
-              <h2>About Us</h2>
-              <p>Test App</p>
+              <h2>Helloman test</h2>
             </div>
-
-            <div class="span4">
-              <h2>Location</h2>
-              <p>USA!!!! hoina NEPAL ho</p>
-            </div>
-
-          </div>
 
         </section>
       </div>

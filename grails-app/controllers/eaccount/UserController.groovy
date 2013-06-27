@@ -25,7 +25,10 @@ class UserController {
             render(view: "create", model: [userInstance: userInstance])
             return
         }
-
+//        def userRole = new UserRole()
+def role = Role.findByAuthority("ROLE_STUDENT")
+ def userrole = new UserRole(user: userInstance,role: role)
+  userrole.save(flush: true)
         flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])
         redirect(action: "show", id: userInstance.id)
     }

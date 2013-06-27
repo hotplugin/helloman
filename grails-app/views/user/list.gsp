@@ -23,31 +23,35 @@
 			<table>
 				<thead>
 					<tr>
-
+					
 						<g:sortableColumn property="firstName" title="${message(code: 'user.firstName.label', default: 'First Name')}" />
-
+					
 						<g:sortableColumn property="middleName" title="${message(code: 'user.middleName.label', default: 'Middle Name')}" />
-
+					
 						<g:sortableColumn property="lastName" title="${message(code: 'user.lastName.label', default: 'Last Name')}" />
-
+					
 						<g:sortableColumn property="username" title="${message(code: 'user.username.label', default: 'Username')}" />
-
-
+					
+					
+						<th><g:message code="user.student.label" default="Student" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${userInstanceList}" status="i" var="userInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-
+					
 						<td><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "firstName")}</g:link></td>
-
+					
 						<td>${fieldValue(bean: userInstance, field: "middleName")}</td>
-
+					
 						<td>${fieldValue(bean: userInstance, field: "lastName")}</td>
-
+					
 						<td>${fieldValue(bean: userInstance, field: "username")}</td>
-
-
+					
+					
+						<td>${fieldValue(bean: userInstance, field: "student")}</td>
+					
 					</tr>
 				</g:each>
 				</tbody>
