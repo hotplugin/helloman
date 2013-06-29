@@ -91,8 +91,13 @@
     </style>
   </head>
   <body>
+
+  <strong>
+      <g:formatDate date="${today}" type="date" style="FULL"/>
+  </strong>
    <div id='login'>
       <div class='inner'>
+
         <div class='fheader'><g:message code="springSecurity.login.header"/></div>
 
         <g:if test='${flash.message}'>
