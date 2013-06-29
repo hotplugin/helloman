@@ -52,8 +52,13 @@ class LoginController {
 
 		String view = 'auth'
 		String postUrl = "${request.contextPath}${config.apf.filterProcessesUrl}"
-		render view: view, model: [postUrl: postUrl,
-		                           rememberMeParameter: config.rememberMe.parameter]
+		//render view: view, model: [postUrl: postUrl,
+		                         //  rememberMeParameter: config.rememberMe.parameter]
+        def model =   [postUrl: postUrl, rememberMeParameter: config.rememberMe.parameter]
+        def formatter = new java.text.SimpleDateFormat('MMddyyyy')
+       Date today =  formatter.parse(formatter.format(new Date()))
+         model.today = today
+        render view: view, model:model
 	}
 
 	/**
